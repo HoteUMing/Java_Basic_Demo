@@ -9,33 +9,35 @@
 目录
 =================
 
-   * [System类](https://github.com/HoteUMing/Java_Basic_Demo#System类)
-   * [Scanner类](https://github.com/HoteUMing/Java_Basic_Demo#Scanner类)
-   * [Math类](https://github.com/HoteUMing/Java_Basic_Demo#Math类)
-   * [Random类](https://github.com/HoteUMing/Java_Basic_Demo#Random类)
-   * [String类](https://github.com/HoteUMing/Java_Basic_Demo#String类)
-   * [StringBuilder类](https://github.com/HoteUMing/Java_Basic_Demo#StringBuilder类)
-   * [Date类](https://github.com/HoteUMing/Java_Basic_Demo#Date类)
-   * [SimpleDateFormat类](https://github.com/HoteUMing/Java_Basic_Demo#SimpleDateFormat类)
-   * [Collection接口类](https://github.com/HoteUMing/Java_Basic_Demo#Collection接口类)
-   * [ArrayList类](https://github.com/HoteUMing/Java_Basic_Demo#ArrayList类)
-   * [LinkedList类](https://github.com/HoteUMing/Java_Basic_Demo#LinkedList类)
-   * [HashSet类](https://github.com/HoteUMing/Java_Basic_Demo#HashSet类)
-   * [LinkedHashSet类](https://github.com/HoteUMing/Java_Basic_Demo#LinkedHashSet类)
-   * [HashMap类](https://github.com/HoteUMing/Java_Basic_Demo#HashMap类)
-   * [LinkedHashMap类](https://github.com/HoteUMing/Java_Basic_Demo#LinkedHashMap类)
-   * [Iterator接口](https://github.com/HoteUMing/Java_Basic_Demo#Iterator接口)
-   * [Arrays工具类](https://github.com/HoteUMing/Java_Basic_Demo#Arrays工具类)
-   * [Collections工具类类](https://github.com/HoteUMing/Java_Basic_Demo#Collections工具类类)
-   * [Properties类](https://github.com/HoteUMing/Java_Basic_Demo#Properties类)
-   * [File类](https://github.com/HoteUMing/Java_Basic_Demo#File类)
-   * [FileFilter类](https://github.com/HoteUMing/Java_Basic_Demo#FileFilter类)
-   * [FileOutputStream类](https://github.com/HoteUMing/Java_Basic_Demo#FileOutputStream类)
-   * [FileInputStream类](https://github.com/HoteUMing/Java_Basic_Demo#FileInputStream类)
-   * [FileWriter类](https://github.com/HoteUMing/Java_Basic_Demo#FileWriter类)
-   * [FileReader类](https://github.com/HoteUMing/Java_Basic_Demo#FileReader类)
-   * [Thread类](https://github.com/HoteUMing/Java_Basic_Demo#Thread类)
-   * [ExecutorService类](https://github.com/HoteUMing/Java_Basic_Demo#ExecutorService类)
+* [System类](https://github.com/HoteUMing/Java_Basic_Demo#System类)
+* [Scanner类](https://github.com/HoteUMing/Java_Basic_Demo#Scanner类)
+* [Math类](https://github.com/HoteUMing/Java_Basic_Demo#Math类)
+* [Random类](https://github.com/HoteUMing/Java_Basic_Demo#Random类)
+* [String类](https://github.com/HoteUMing/Java_Basic_Demo#String类)
+* [StringBuilder类](https://github.com/HoteUMing/Java_Basic_Demo#StringBuilder类)
+* [Date类](https://github.com/HoteUMing/Java_Basic_Demo#Date类)
+* [SimpleDateFormat类](https://github.com/HoteUMing/Java_Basic_Demo#SimpleDateFormat类)
+* [Collection接口类](https://github.com/HoteUMing/Java_Basic_Demo#Collection接口类)
+* [ArrayList类](https://github.com/HoteUMing/Java_Basic_Demo#ArrayList类)
+* [LinkedList类](https://github.com/HoteUMing/Java_Basic_Demo#LinkedList类)
+* [HashSet类](https://github.com/HoteUMing/Java_Basic_Demo#HashSet类)
+* [LinkedHashSet类](https://github.com/HoteUMing/Java_Basic_Demo#LinkedHashSet类)
+* [HashMap类](https://github.com/HoteUMing/Java_Basic_Demo#HashMap类)
+* [LinkedHashMap类](https://github.com/HoteUMing/Java_Basic_Demo#LinkedHashMap类)
+* [Iterator接口](https://github.com/HoteUMing/Java_Basic_Demo#Iterator接口)
+* [Arrays工具类](https://github.com/HoteUMing/Java_Basic_Demo#Arrays工具类)
+* [Collections工具类类](https://github.com/HoteUMing/Java_Basic_Demo#Collections工具类类)
+* [Properties类](https://github.com/HoteUMing/Java_Basic_Demo#Properties类)
+* [File类](https://github.com/HoteUMing/Java_Basic_Demo#File类)
+* [FileFilter类](https://github.com/HoteUMing/Java_Basic_Demo#FileFilter类)
+* [FileOutputStream类](https://github.com/HoteUMing/Java_Basic_Demo#FileOutputStream类)
+* [FileInputStream类](https://github.com/HoteUMing/Java_Basic_Demo#FileInputStream类)
+* [FileWriter类](https://github.com/HoteUMing/Java_Basic_Demo#FileWriter类)
+* [FileReader类](https://github.com/HoteUMing/Java_Basic_Demo#FileReader类)
+* [Thread类](https://github.com/HoteUMing/Java_Basic_Demo#Thread类)
+* [ExecutorService类](https://github.com/HoteUMing/Java_Basic_Demo#ExecutorService类)
+* [Socket类](https://github.com/HoteUMing/Java_Basic_Demo#Socket类)
+* [ServerSocket类](https://github.com/HoteUMing/Java_Basic_Demo#ServerSocket类)
 
 # System类
 
@@ -1832,6 +1834,184 @@ public static class MyThread implements Runnable {
 	public void run() {
 		Thread thread = Thread.currentThread();
 		System.out.println("Thread.currentThread(): " + thread);
+	}
+}
+```
+
+# Socket类
+
+> 配合ServerSocket类使用
+
+常用构造方法
+
+| 构造方法                      | 描述                                             |
+| ----------------------------- | ------------------------------------------------ |
+| Socket()                      | 创建一个未连接的套接字，系统默认类型为SocketImpl |
+| Socket(String host, int port) | 创建流套接字并将其连接到指定主机上的指定端口号   |
+
+常用方法摘要
+
+| 返回值类型    | 方法名                   | 描述                                                  |
+| ------------- | ------------------------ | ----------------------------------------------------- |
+| boolean       | isConnected()            | 返回套接字的连接状态                                  |
+| SocketAddress | getLocalSocketAddress()  | 返回此套接字绑定的端点的地址                          |
+| SocketAddress | getRemoteSocketAddress() | 返回此套接字连接到的端点的地址，如果未连接则返回 null |
+| InetAddress   | getInetAddress()         | 返回套接字连接的地址                                  |
+| InetAddress   | getLocalAddress()        | 获取套接字绑定的本地地址                              |
+| int           | getLocalPort()           | 返回此套接字绑定的本地端口号                          |
+| int           | getPort()                | 返回此套接字连接的远程端口号                          |
+| InputStream   | getInputStream()         | 返回此套接字的输入流                                  |
+| boolean       | isInputShutdown()        | 返回套接字连接的读半部分是否已关闭                    |
+| void          | shutdownInput()          | 将此套接字的输入流放在“流结束”                        |
+| OutputStream  | getOutputStream()        | 返回此套接字的输出流                                  |
+| boolean       | isOutputShutdown()       | 返回套接字连接的写半部分是否已关闭                    |
+| void          | shutdownOutput()         | 禁用此套接字的输出流                                  |
+| boolean       | isClosed()               | 返回套接字的关闭状态                                  |
+| void          | close()                  | 关闭此套接字                                          |
+
+举例
+
+``` java
+public static void main(String[] args) {
+	try {
+		Socket socket = new Socket("127.0.0.1", 8888);
+
+		boolean b1 = socket.isConnected();
+		System.out.println("isConnected(): " + b1);
+		//isConnected(): true
+
+		SocketAddress localSocketAddress = socket.getLocalSocketAddress();
+		System.out.println("getLocalSocketAddress(): " + localSocketAddress.toString());
+		//getLocalSocketAddress(): /127.0.0.1:65510
+
+		SocketAddress remoteSocketAddress = socket.getRemoteSocketAddress();
+		System.out.println("getRemoteSocketAddress(): " + remoteSocketAddress.toString());
+		//getRemoteSocketAddress(): /127.0.0.1:8888
+
+		InetAddress inetAddress = socket.getInetAddress();
+		System.out.println("getInetAddress(): " + inetAddress.toString());
+		//getInetAddress(): /127.0.0.1
+
+		InetAddress localAddress = socket.getLocalAddress();
+		System.out.println("getLocalAddress(): " + localAddress.toString());
+		//getLocalAddress(): /127.0.0.1
+
+		int localPort = socket.getLocalPort();
+		System.out.println("getLocalPort(): " + localPort);
+		//getLocalPort(): 65510
+
+		int port = socket.getPort();
+		System.out.println("getPort(): " + port);
+		//getPort(): 8888
+
+		OutputStream outputStream = socket.getOutputStream();
+		outputStream.write("我是客户端".getBytes());
+		boolean b2 = socket.isOutputShutdown();
+		System.out.println("isOutputShutdown(): " + b2);
+		//isOutputShutdown(): false
+		socket.shutdownOutput();
+
+		InputStream inputStream = socket.getInputStream();
+		byte[] bytes = new byte[1024];
+		int length = 0;
+		while ((length = inputStream.read(bytes)) != -1) {
+			System.out.println(new String(bytes, 0, length));
+		}
+		boolean b3 = socket.isInputShutdown();
+		System.out.println("isInputShutdown(): " + b3);
+		//isInputShutdown(): false
+		socket.shutdownInput();
+
+		boolean b4 = socket.isClosed();
+		System.out.println("isClosed(): " + b4);
+		//isClosed(): false
+
+		inputStream.close();
+		outputStream.close();
+		socket.close();
+	} catch (Exception e) {
+		System.out.println(e.getMessage());
+	}
+}
+```
+
+# ServerSocket类
+
+> 配合Socket类使用
+
+常用构造方法
+
+| 构造方法               | 描述                             |
+| ---------------------- | -------------------------------- |
+| ServerSocket()         | 创建未绑定的服务器套接字         |
+| ServerSocket(int port) | 创建绑定到指定端口的服务器套接字 |
+
+常用方法摘要
+
+| 返回值类型    | 方法名                  | 描述                         |
+| ------------- | ----------------------- | ---------------------------- |
+| Socket        | accept()                | 侦听对此套接字的连接并接受它 |
+| SocketAddress | getLocalSocketAddress() | 返回此套接字绑定的端点的地址 |
+| InetAddress   | getInetAddress()        | 返回此服务器套接字的本地地址 |
+| int           | getLocalPort()          | 返回此套接字正在侦听的端口号 |
+| boolean       | isClosed()              | 返回ServerSocket的关闭状态   |
+| void          | close()                 | 关闭此套接字                 |
+
+举例
+
+``` java
+public static void main(String[] args) {
+	try {
+		ServerSocket serverSocket = new ServerSocket(8888);
+
+		SocketAddress localSocketAddress = serverSocket.getLocalSocketAddress();
+		System.out.println("getLocalSocketAddress(): " + localSocketAddress.toString());
+		//getLocalSocketAddress(): 0.0.0.0/0.0.0.0:8888
+
+		InetAddress inetAddress = serverSocket.getInetAddress();
+		System.out.println("getInetAddress(): " + inetAddress);
+		//getInetAddress(): 0.0.0.0/0.0.0.0
+
+		int localPort = serverSocket.getLocalPort();
+		System.out.println("getLocalPort(): " + localPort);
+		//getLocalPort(): 8888
+
+		boolean b1 = serverSocket.isClosed();
+		System.out.println("isClosed(): " + b1);
+		//isClosed(): false
+
+		ExecutorService es = Executors.newFixedThreadPool(5);
+		while (true) {
+			Socket socket = serverSocket.accept();
+			es.submit(new Thread() {
+				@Override
+				public void run() {
+					try {
+						InputStream inputStream = socket.getInputStream();
+						byte[] bytes = new byte[1024];
+						int length = 0;
+						while ((length = inputStream.read(bytes)) != -1) {
+							System.out.println(new String(bytes, 0, length));
+						}
+						socket.shutdownInput();
+
+						OutputStream outputStream = socket.getOutputStream();
+						outputStream.write("我是服务器".getBytes());
+						socket.shutdownOutput();
+
+						inputStream.close();
+						outputStream.close();
+						socket.close();
+					} catch (Exception e) {
+						System.out.println(e.getMessage());
+					}
+				}
+			});
+		}
+//            es.shutdownNow();
+//            serverSocket.close();
+	} catch (Exception e) {
+		System.out.println(e.getMessage());
 	}
 }
 ```
