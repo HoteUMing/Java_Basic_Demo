@@ -1035,22 +1035,52 @@ System.out.println("linkedHashSet1: " + linkedHashSet1);
 
 常用方法摘要
 
-| 返回值类型 | 方法名                      | 描述                                                         |
-| ---------- | --------------------------- | ------------------------------------------------------------ |
-| V          | put(K key, V value)         | 在此映射中关联指定值与指定键                                 |
-| V          | get(Object key)             | 返回指定键所映射的值；如果对于该键来说，此映射不包含任何映射关系，则返回 null |
-| boolean    | containsKey(Object key)     | 如果此映射包含对于指定键的映射关系，则返回 true              |
-| boolean    | containsValue(Object value) | 如果此映射将一个或多个键映射到指定值，则返回 true            |
-| int        | size()                      | 返回此映射中的键-值映射关系数                                |
-| boolean    | isEmpty()                   | 如果此映射不包含键-值映射关系，则返回 true                   |
-| V          | remove(Object key)          | 从此映射中移除指定键的映射关系（如果存在）                   |
-| void       | clear()                     | 从此映射中移除所有映射关系                                   |
+| 返回值类型          | 方法名                      | 描述                                                         |
+| ------------------- | --------------------------- | ------------------------------------------------------------ |
+| V                   | put(K key, V value)         | 在此映射中关联指定值与指定键                                 |
+| V                   | get(Object key)             | 返回指定键所映射的值；如果对于该键来说，此映射不包含任何映射关系，则返回 null |
+| boolean             | containsKey(Object key)     | 如果此映射包含对于指定键的映射关系，则返回 true              |
+| boolean             | containsValue(Object value) | 如果此映射将一个或多个键映射到指定值，则返回 true            |
+| Set\<K>             | keySet()                    | 返回此映射中包含的键的Set视图【作遍历用】                    |
+| Set<Map.Entry<K,V>> | entrySet()                  | 返回此映射中包含的映射的Set视图【作遍历用】                  |
+| int                 | size()                      | 返回此映射中的键-值映射关系数                                |
+| boolean             | isEmpty()                   | 如果此映射不包含键-值映射关系，则返回 true                   |
+| V                   | remove(Object key)          | 从此映射中移除指定键的映射关系（如果存在）                   |
+| void                | clear()                     | 从此映射中移除所有映射关系                                   |
 
 举例
 
 ``` java
 Map<Integer, String> map1 = new HashMap<>();
 Map<Integer, String> map2 = new HashMap<>(20);
+
+map2.put(0, "hello");
+map2.put(1, "world");
+map2.put(2, "key");
+map2.put(3, "value");
+
+//遍历HashMap的方法-1
+Set<Integer> keys = map2.keySet();
+Iterator<Integer> iterator1 = keys.iterator();
+while (iterator1.hasNext()) {
+	Integer key = iterator1.next();
+	System.out.println("map2.keySet(): " + key + " = " + map2.get(key));
+	//map2.keySet(): 0 = hello
+	//map2.keySet(): 1 = world
+	//map2.keySet(): 2 = key
+	//map2.keySet(): 3 = value
+}
+//遍历HashMap的方法-2
+Set<Map.Entry<Integer, String>> entrys = map2.entrySet();
+Iterator<Map.Entry<Integer, String>> iterator2 = entrys.iterator();
+while (iterator2.hasNext()) {
+	Map.Entry<Integer, String> entry = iterator2.next();
+	System.out.println("map2.entrySet(): " + entry.getKey() + " = " + entry.getValue());
+	//map2.entrySet(): 0 = hello
+	//map2.entrySet(): 1 = world
+	//map2.entrySet(): 2 = key
+	//map2.entrySet(): 3 = value
+}
 
 String put = map1.put(0, "a");
 System.out.println("put(0, \"a\"): " + put);
